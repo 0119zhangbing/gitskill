@@ -18,19 +18,19 @@ public  class SchoolSystem implements ISignUp,IParams {
 	int arr[];
 	int sum1,sum2,sum3;
  
-	public int getBig() {			//大班
+	public int getBig() {
 		Scanner in=new Scanner(System.in);
 		System.out.print("大班目前剩余的名额为：");
 		sum1=in.nextInt();
 		return sum1;
 	}
-	public int getMedium() {		//中班
+	public int getMedium() {
 		Scanner in=new Scanner(System.in);
 		System.out.print("中班目前剩余的名额为：");
 		sum2=in.nextInt();
 		return sum2;
 	}
-	public int getSmall() {		//小班
+	public int getSmall() {
 		Scanner in=new Scanner(System.in);
 		System.out.print("小班目前剩余的名额为：");
 		sum3=in.nextInt();
