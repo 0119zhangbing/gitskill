@@ -1,0 +1,90 @@
+import java.util.*;
+
+interface ISignUp{
+	// 检查是否有 n对应的班级名额
+    // 如果没有剩余名额，请返回 false ，否则学生将报名进入该班级并返回 true
+	public void addStudent(int n);
+}
+interface IParams{
+	public int getBig();
+	public int getMedium();
+	public int getSmall();
+	public void getPlanSignUp(int n);
+}
+public  class SchoolSystem implements ISignUp,IParams {
+	int Big;
+	int Medium;
+	int Small;
+	int arr[];
+	int sum1,sum2,sum3;
+ 
+	public int getBig() {
+		Scanner in=new Scanner(System.in);
+		System.out.print("大班目前剩余的名额为：");
+		sum1=in.nextInt();
+		return sum1;
+	}
+	public int getMedium() {
+		Scanner in=new Scanner(System.in);
+		System.out.print("中班目前剩余的名额为：");
+		sum2=in.nextInt();
+		return sum2;
+	}
+	public int getSmall() {
+		Scanner in=new Scanner(System.in);
+		System.out.print("小班目前剩余的名额为：");
+		sum3=in.nextInt();
+		return sum3;
+	}
+	public void getPlanSignUp(int n) {
+		Scanner in=new Scanner(System.in);
+		arr=new int[n];
+		System.out.print("大班代号为1;中班代号为2；小班代号为3\n");
+		System.out.print("请输入今年入学的学生各自报名的班别：\n");
+		for(int i=0;i<n;i++) {
+			arr[i]=in.nextInt();
+   		}
+	}
+	public void addStudent(int n) {
+		System.out.print("学生报名入学的结果为：");
+		for(int i=0;i<n;i++) {
+			if(arr[i]==1) {
+				if(sum1>0) {
+					sum1=sum1-1;
+					System.out.print(true+" ");
+				}
+				else
+					System.out.print(false+" ");
+			}
+			if(arr[i]==2) {
+				if(sum2>0) {
+					sum2=sum2-1;
+					System.out.print(true+" ");
+				}
+				else
+					System.out.print(false+" ");
+			}
+			if(arr[i]==3) {
+				if(sum3>0) {
+					sum3=sum3-1;
+					System.out.print(true+" ");
+				}
+				else
+					System.out.print(false+" ");
+			}
+		}
+	}
+	
+    public static void main(String args[]) {
+    	Scanner in=new Scanner(System.in);
+    	SchoolSystem sc=new SchoolSystem();
+    	System.out.print("请输入今年入学的学生总体人数为：");
+    	int n=in.nextInt();
+    	sc.getPlanSignUp(n);
+    	sc.getBig();
+    	sc.getMedium();
+    	sc.getSmall();
+    	sc.addStudent(n);
+    	in.close();
+    }
+}
