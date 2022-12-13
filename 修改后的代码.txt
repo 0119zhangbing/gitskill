@@ -108,6 +108,11 @@ public  class SchoolSystem implements ISignUp,IParams {
 		}
 	}
 	
+	public void test() {
+		System.out.println();
+		System.out.print("张冰参与了本代码开发，并进行了修改。");
+	}
+	
     public static void main(String args[]) {
     	Scanner in=new Scanner(System.in);
     	SchoolSystem sc=new SchoolSystem();
@@ -119,10 +124,7 @@ public  class SchoolSystem implements ISignUp,IParams {
     	sc.getSmall();
     	sc.addStudent(n);
     	sc.delStudent();
+    	sc.test();
     	in.close();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master
